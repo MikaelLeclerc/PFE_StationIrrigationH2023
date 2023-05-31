@@ -97,7 +97,7 @@ void setup() {
 
 void loop() {
   unsigned long maintenant = millis();
-  // Chronometre de 10 minutes
+  // Chronometre de 1 seconde
   if (maintenant - tempCapteur >= 1000) {
     tempCapteur = maintenant;
     
