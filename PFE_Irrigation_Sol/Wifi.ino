@@ -19,7 +19,7 @@ void connectionWifi() {
   while (WiFi.status() != WL_CONNECTED) {
     timerConnection();
     unsigned long maintenant = millis();
-    if (maintenant - delayWifi >= 25000) {
+    if (maintenant - delayWifi >= 20000) {
       EtatDeConnectionInt = 0;
       break;
     }
