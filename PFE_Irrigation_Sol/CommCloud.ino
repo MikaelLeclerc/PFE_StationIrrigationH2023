@@ -17,7 +17,7 @@ void connectionTb() {
       affichageMenu3(EtatDeConnectionTb, EtatDeConnectionInt);
     }
     unsigned long maintenant = millis();
-    if (maintenant - tempsTb >= 25000) {
+    if (maintenant - tempsTb >= 20000) {
       Serial.print( "fail" );
       connectionThingsboard = false;
       EtatDeConnectionTb = 0;
