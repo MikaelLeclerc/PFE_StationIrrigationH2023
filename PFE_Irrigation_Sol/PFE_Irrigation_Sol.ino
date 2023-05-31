@@ -104,6 +104,6 @@ void loop() {
     mesure();   //Onglet Capteur
     affichageMenu3(EtatDeConnectionTb, EtatDeConnectionInt);  //Onglet Ecran
   }
-  0
+  
   commande(); //Onglet Bouton
 }
