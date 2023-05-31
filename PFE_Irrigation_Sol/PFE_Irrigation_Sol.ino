@@ -91,6 +91,7 @@ void setup() {
 
   connectionWifi(); //Onglet Wifi
   connectionTb(); //Onglet CommCloud
+  mesure();
 
 }
 
