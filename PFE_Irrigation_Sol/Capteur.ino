@@ -1,3 +1,4 @@
+byte mesureCapteur = 0;
 
 void mesure() {
   // Varialbe de calibration capteur humidite sol
@@ -19,7 +20,7 @@ void mesure() {
   mesureTensionCapteur3 = (mesureTensionCapteur3 * 3.3) / 4095;
 
   //Convertie la tension en cm3/cm3 avec la calibration
-  volumeEau1 = (((1.0/mesureTensionCapteur1) * penteCalibration1) + b1) * 100;
+  volumeEau1 = (((1.0 / mesureTensionCapteur1) * penteCalibration1) + b1) * 100;
   volumeEau2 = ((1.0 / mesureTensionCapteur2) * penteCalibration2) + b2;
   volumeEau3 = ((1.0 / mesureTensionCapteur3) * penteCalibration3) + b3;
 
@@ -28,7 +29,13 @@ void mesure() {
   float t = (dht.readTemperature() * 1.036245724) + 0.8751;
   float h = dht.readHumidity();
   float lux = myLux.getLux();
+  mesureCapteur++;
 
   affichageMenu2(lux, h, t); // Onglet Ecran
-  //envoiDeDonnee(volumeEau1, volumeEau2, volumeEau3, lux, h, t);
+
+  // Chronometre de 10 minutes
+  if (mesureCapteur == 600) {
+    mesureCapteur = 0;
+    //envoiDeDonnee(volumeEau1, volumeEau2, volumeEau3, lux, h, t);
+  }
 }
